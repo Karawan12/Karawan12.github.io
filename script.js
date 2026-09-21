@@ -6,7 +6,7 @@ document.getElementById('burger').onclick = () => menu.classList.toggle('open');
 menu.querySelectorAll('a').forEach(a => a.onclick = () => menu.classList.remove('open'));
 
 // typing effect
-const roles = ['IT Systems Engineer', 'Windows Deployment Automation', 'Network & Systems administration', 'Instructeur Cisco NetAcad', 'IT Infrastructure & Cloud'];
+const roles = ['IT Systems Engineer', 'Windows Deployment Automation', 'Network & Systems administration', 'Cisco Networking Academy Instructor', 'IT Infrastructure & Cloud'];
 const el = document.getElementById('typing');
 let r = 0, c = 0, del = false;
 (function type() {
