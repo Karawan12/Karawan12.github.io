@@ -4,54 +4,139 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Houssam Karawan | IT Systems Engineer</title>
+  <meta name="description" content="Portfolio de Houssam Karawan – Technicien systèmes et réseaux, automatisation du déploiement Windows, SD-WAN, Cisco.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Houssam Karawan</h1>
-  <p>IT Systems Engineer | Network & Systems Administration</p>
-  <a class="btn" href="assets/cv.pdf" download>Télécharger mon CV</a>
+<div class="bg"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+
+<nav id="nav">
+  <a href="#home" class="logo">HK<span>.</span></a>
+  <button id="burger" aria-label="Menu">☰</button>
+  <ul id="menu">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#certs">Certificats</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header id="home" class="hero">
+  <div class="hero-text reveal">
+    <p class="hello">Salut, je suis</p>
+    <h1>Houssam <span class="grad">Karawan</span></h1>
+    <p class="role"><span id="typing"></span><span class="cursor">|</span></p>
+    <p class="lead">Technicien en réseaux et administration systèmes. J'automatise le déploiement des postes, je sécurise les infrastructures et je forme aux réseaux Cisco.</p>
+    <div class="actions">
+      <a class="btn primary" href="#cv">Télécharger mon CV</a>
+      <a class="btn ghost" href="#contact">Me contacter</a>
+    </div>
+  </div>
+  <div class="hero-photo reveal">
+    <div class="ring">
+      <div class="photo">
+        <img src="assets/photo.jpg" alt="Houssam Karawan" onerror="this.style.display='none'">
+        <span class="initials">HK</span>
+      </div>
+    </div>
+  </div>
 </header>
 
-<section id="about">
-  <h2>À propos</h2>
-  <p>Technicien en réseaux et administration systèmes (OFPPT), spécialisé dans
-  l'automatisation du déploiement Windows, SD-WAN/FortiGate, Cisco et Linux.</p>
-</section>
-
-<section id="projects">
-  <h2>Projets</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Windows 11 Deployment Automation</h3>
-      <p>Pipeline de déploiement zero-touch : ISO personnalisée, golden image, applications intégrées.</p>
-    </div>
-    <div class="card">
-      <h3>Ubuntu Secure Deployment (PFE)</h3>
-      <p>Cubic, cloud-init, LUKS et Ansible-pull.</p>
-    </div>
-    <div class="card">
-      <h3>SD-WAN FortiGate</h3>
-      <p>Projet de stage : architecture et configuration SD-WAN.</p>
-    </div>
-    <div class="card">
-      <h3>WDS / PXE Server</h3>
-      <p>Déploiement multi-OS par boot réseau.</p>
+<section id="about" class="reveal">
+  <h2>À <span class="grad">propos</span></h2>
+  <div class="about-grid">
+    <p>Technicien spécialisé en administration système et réseaux, diplômé de l'OFPPT en Infrastructure Digitale. Je travaille sur l'automatisation du déploiement Windows 11, le SD-WAN avec FortiGate, l'administration Linux et la cybersécurité. Instructeur à la Cisco Networking Academy, j'accompagne les apprenants vers les certifications CCNA et CCNP.</p>
+    <div class="stats">
+      <div class="stat"><b data-count="70">0</b><span>% de temps de déploiement gagné</span></div>
+      <div class="stat"><b data-count="90">0</b><span>% d'incidents résolus en &lt; 30 min</span></div>
+      <div class="stat"><b data-count="11">0</b><span>certificats</span></div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <ul>
-    <li>Email : <a href="mailto:TON_EMAIL@gmail.com">TON_EMAIL@gmail.com</a></li>
-    <li>LinkedIn : <a href="https://www.linkedin.com/in/TON_PROFIL" target="_blank">Houssam Karawan</a></li>
-    <li>GitHub : <a href="https://github.com/Karawan12" target="_blank">Karawan12</a></li>
-  </ul>
+<section id="projects">
+  <h2 class="reveal">Mes <span class="grad">projets</span></h2>
+  <div class="cards">
+    <article class="card reveal">
+      <div class="ico">💻</div>
+      <h3>Windows 11 Deployment Automation</h3>
+      <p>Pipeline zero-touch : ISO personnalisée, golden image, applications intégrées.</p>
+      <div class="tags"><span>PowerShell</span><span>Imaging</span><span>Zero-touch</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="ico">🐧</div>
+      <h3>Ubuntu Secure Deployment</h3>
+      <p>Image Cubic, cloud-init, chiffrement LUKS et Ansible-pull pour un déploiement reproductible.</p>
+      <div class="tags"><span>Cubic</span><span>LUKS</span><span>Ansible</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="ico">🌐</div>
+      <h3>SD-WAN FortiGate</h3>
+      <p>SD-WAN avec tunnels IPSec VPN redondants et tests de connectivité inter-sites (Safran).</p>
+      <div class="tags"><span>FortiGate</span><span>IPSec</span><span>SD-WAN</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="ico">🖧</div>
+      <h3>Serveur WDS / PXE</h3>
+      <p>Boot réseau et déploiement de plusieurs images OS depuis Windows Server.</p>
+      <div class="tags"><span>WDS</span><span>PXE</span><span>Windows Server</span></div>
+    </article>
+  </div>
 </section>
 
-<footer>© 2026 Houssam Karawan</footer>
+<section id="certs">
+  <h2 class="reveal">Mes <span class="grad">certificats</span></h2>
+  <div class="filters reveal">
+    <button class="f active" data-f="all">Tous</button>
+    <button class="f" data-f="cisco">Cisco</button>
+    <button class="f" data-f="cloud">Cloud</button>
+    <button class="f" data-f="secu">Cybersécurité</button>
+    <button class="f" data-f="data">Data</button>
+  </div>
+  <div class="cert-grid">
+    <div class="cert reveal" data-c="cisco"><b>CCNA</b><span>Cisco</span></div>
+    <div class="cert reveal" data-c="cisco"><b>CCNP Enterprise</b><span>Cisco</span></div>
+    <div class="cert reveal" data-c="cisco"><b>CCST Networking</b><span>Cisco</span></div>
+    <div class="cert reveal" data-c="cisco"><b>Network Addressing and Basic Troubleshooting</b><span>Cisco</span></div>
+    <div class="cert reveal" data-c="cisco"><b>Introduction to Cybersecurity</b><span>Cisco</span></div>
+    <div class="cert reveal" data-c="secu"><b>Fortinet Certified Associate in Cybersecurity</b><span>Fortinet</span></div>
+    <div class="cert reveal" data-c="secu"><b>Cybersecurity Awareness</b><span>LinkedIn Learning</span></div>
+    <div class="cert reveal" data-c="cloud"><b>Introduction to Cloud 101</b><span>AWS Educate</span></div>
+    <div class="cert reveal" data-c="cloud"><b>AWS Cloud Essentials</b><span>AWS</span></div>
+    <div class="cert reveal" data-c="cloud"><b>Computer Vision App with Azure Cognitive Services</b><span>Microsoft</span></div>
+    <div class="cert reveal" data-c="data"><b>Data Science &amp; Analytics</b><span>HP</span></div>
+  </div>
+</section>
 
+<section id="cv">
+  <h2 class="reveal">Mon <span class="grad">CV</span></h2>
+  <div class="cv-grid">
+    <a class="cv-card reveal" href="assets/cv.pdf" download>
+      <span class="flag">🇫🇷</span><h3>CV Français</h3><p>Version classique</p><span class="dl">Télécharger ↓</span>
+    </a>
+    <a class="cv-card reveal" href="assets/cv-international.pdf" download>
+      <span class="flag">🌍</span><h3>CV International</h3><p>English version</p><span class="dl">Download ↓</span>
+    </a>
+    <a class="cv-card reveal" href="assets/cv-photo.pdf" download>
+      <span class="flag">📸</span><h3>CV avec photo</h3><p>Version avec photo</p><span class="dl">Télécharger ↓</span>
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="reveal">Me <span class="grad">contacter</span></h2>
+  <div class="contact-grid">
+    <a class="contact reveal" href="mailto:houssamkarawan10@gmail.com"><span>✉️</span><b>Email</b><small>houssamkarawan10@gmail.com</small></a>
+    <a class="contact reveal" href="tel:+212776011395"><span>📞</span><b>Téléphone</b><small>07 76 01 13 95</small></a>
+    <a class="contact reveal" href="www.linkedin.com/in/houssam-karawan-428150332" target="_blank" rel="noopener"><span>💼</span><b>LinkedIn</b><small>Houssam KARAWAN</small></a>
+    <a class="contact reveal" href="https://github.com/Karawan12" target="_blank" rel="noopener"><span>🐙</span><b>GitHub</b><small>Karawan12</small></a>
+  </div>
+</section>
+
+<footer>© 2026 Houssam Karawan ·</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
