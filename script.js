@@ -65,7 +65,7 @@
   /* ---------- floating shapes behind everything ---------- */
   const bg = $('.bg');
   if (bg && !reduce) {
-    const cols = ['#00f5a0', '#00b8ff', '#8a5cff'];
+    const cols = ['#3b82f6', '#22d3ee', '#d4af5a'];
     for (let i = 0; i < 18; i++) {
       const s = document.createElement('i'); s.className = 'shape';
       const size = 14 + Math.random() * 40;
@@ -117,19 +117,19 @@
       for (let j = i + 1; j < nodes.length; j++) {
         const b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y);
         if (d < LINK) {
-          ctx.strokeStyle = `rgba(0,184,255,${(1 - d / LINK) * .3})`;
+          ctx.strokeStyle = `rgba(59,130,246,${(1 - d / LINK) * .32})`;
           ctx.lineWidth = 1;
           ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
         }
       }
-      ctx.fillStyle = 'rgba(0,245,160,.75)';
+      ctx.fillStyle = 'rgba(34,211,238,.8)';
       ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.283); ctx.fill();
     }
     /* packets travelling along links */
     if (!reduce && packets.length < 18 && Math.random() < .08 && nodes.length) {
       const a = nodes[Math.random() * nodes.length | 0];
       const near = nodes.filter(b => b !== a && Math.hypot(a.x - b.x, a.y - b.y) < LINK);
-      if (near.length) packets.push({ a, b: near[Math.random() * near.length | 0], t: 0, s: .01 + Math.random() * .014, c: Math.random() < .5 ? '0,245,160' : '138,92,255' });
+      if (near.length) packets.push({ a, b: near[Math.random() * near.length | 0], t: 0, s: .01 + Math.random() * .014, c: Math.random() < .5 ? '34,211,238' : '212,175,90' });
     }
     packets = packets.filter(p => p.t < 1);
     for (const p of packets) {
@@ -156,6 +156,22 @@
     t.style.transitionDelay = Math.min(sibs.indexOf(t), 8) * 90 + 'ms';
     io.observe(t);
   });
+
+  /* ---------- education timeline: animated fill line ---------- */
+  const tl = $('.timeline'), tlFill = $('#tlFill');
+  if (tl && tlFill) {
+    const onScrollTL = () => {
+      const r = tl.getBoundingClientRect();
+      const vh = innerHeight;
+      const total = r.height;
+      let progressed = (vh * .8) - r.top;
+      progressed = Math.max(0, Math.min(total, progressed));
+      tlFill.style.height = (total ? progressed / total * 100 : 0) + '%';
+    };
+    addEventListener('scroll', onScrollTL, { passive: true });
+    addEventListener('resize', onScrollTL);
+    onScrollTL();
+  }
 
   /* ---------- animated counters ---------- */
   $$('.stat').forEach(s => {
