@@ -157,6 +157,18 @@
     io.observe(t);
   });
 
+  /* ---------- curriculum toggle (click for touch, hover handled in CSS) ---------- */
+  $$('.tl-toggle').forEach(btn => {
+    const label = $('span', btn);
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      const card = btn.closest('.tl-card');
+      const open = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      if (label) label.textContent = open ? 'Hide curriculum' : 'Explore the curriculum';
+    });
+  });
+
   /* ---------- education timeline: animated fill line ---------- */
   const tl = $('.timeline'), tlFill = $('#tlFill');
   if (tl && tlFill) {
